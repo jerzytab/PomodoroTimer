@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomodoro_Timer.Views.NoteItemPage"
+             Title="Add Note">
+
+    <StackLayout
+        Margin="20"
+        Spacing="10"
+        VerticalOptions="StartAndExpand">
+        <Label Text="Name" />
+        <Entry Text="{Binding Name}" />
+
+        <Label Text="Notes" />
+        <Entry Text="{Binding Notes}" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label
+                Margin="0,10"
+                HorizontalOptions="StartAndExpand"
+                Text="Done" />
+            <Switch HorizontalOptions="EndAndExpand" IsToggled="{Binding Done}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <ImageButton
+                BackgroundColor="RoyalBlue"
+                Padding="5"
+                Margin="10"
+                HeightRequest="40"
+                WidthRequest="40"
+                CornerRadius="10"
+                Clicked="OnSaveClicked"
+                Source="check.svg"
+                Aspect="AspectFit" />
+
+            <ImageButton
+                BackgroundColor="Red"
+                Padding="5"
+                Margin="10"
+                HeightRequest="40"
+                WidthRequest="40"
+                CornerRadius="10"
+                Clicked="OnDeleteClicked"
+                Source="trash.svg"
+                Aspect="AspectFit" />
+
+            <ImageButton
+                BackgroundColor="Gray"
+                Padding="5"
+                Margin="10"
+                HeightRequest="40"
+                WidthRequest="40"
+                CornerRadius="10"
+                Clicked="OnCancelClicked"
+                Source="xmark.svg"
+                Aspect="AspectFit" />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
