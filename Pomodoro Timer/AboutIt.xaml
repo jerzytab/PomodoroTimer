@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomodoro_Timer.AboutIt"
+             BackgroundImageSource="background.jpg">
+    <Frame
+        BackgroundColor="#ECE4D6"
+        Opacity="0.5"
+        HeightRequest="500"
+        WidthRequest="280"
+        Margin="0,-60,0,0"
+        HasShadow="True"
+        CornerRadius="20">
+            <ScrollView>
+                <VerticalStackLayout Padding="20">
+                    <Label Text="Technika Pomodoro"
+                           FontSize="32"
+                           FontAttributes="Bold"
+                           HorizontalOptions="CenterAndExpand" />
+
+                    <Label Text="Technika Pomodoro to metoda zarządzania czasem, która została opracowana przez Francesco Cirillo na koniec lat 80. Technika ta polega na dzieleniu pracy na interwały, zazwyczaj 25 minut długości, oddzielone krótkimi przerwami. Te interwały są znane jako 'pomodoro', włoskie słowo na 'pomidor', od kształtu kuchennego timera, który Cirillo używał jako student."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+                </VerticalStackLayout>
+            </ScrollView>
+    </Frame>
+</ContentPage>

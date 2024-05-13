@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="Pomodoro_Timer.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Pomodoro_Timer"
     xmlns:views="clr-namespace:Pomodoro_Timer.Views"
-    Shell.FlyoutBehavior="Flyout"
-    Title="Pomodoro_Timer">
+    Shell.FlyoutBehavior="Disabled"
+    Title="Pomodoro_Timer"
+    TabBarBackgroundColor="Transparent">
     <Shell.Resources>
         <Style TargetType="Shell">
             <Setter Property="Shell.BackgroundImageSource" Value="background.jpg" />
@@ -16,12 +16,17 @@
         <ShellContent
             Title=""
             ContentTemplate="{DataTemplate local:PomodoroTimer}"
-            Route="PomodoroTimer" 
+            Route="PomodoroTimer"
             Icon="clock.svg"/>
         <ShellContent
             Title=""
             ContentTemplate="{DataTemplate views:NoteListPage}"
-            Route="NoteListPage" 
+            Route="NoteListPage"
+            Icon="note.svg"/>
+        <ShellContent
+            Title=""
+            ContentTemplate="{DataTemplate local:AboutIt}"
+            Route="AboutIt"
             Icon="note.svg"/>
     </FlyoutItem>
 </Shell>

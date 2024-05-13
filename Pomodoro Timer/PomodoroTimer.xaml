@@ -4,33 +4,52 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 
     x:Class="Pomodoro_Timer.PomodoroTimer"
-    Title="PomodoroTimer">
+    Title="PomodoroTimer"
+    BackgroundImageSource="background.jpg">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnSettingsClicked" Text="o">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android,UWP" Value="bar.svg" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <Frame
+        BackgroundColor="#ECE4D6"
+        HeightRequest="500"
+        WidthRequest="280"
+        Margin="0,-60,0,0"
+        HasShadow="True"
+        CornerRadius="20">
+        <VerticalStackLayout  HeightRequest="400" WidthRequest="250" Padding="30" HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid>
+                <GraphicsView x:Name="ProgressView"
+                              BackgroundColor="{StaticResource Primary}"
+                              HeightRequest="100"
+                              WidthRequest="100"/>
+                <Button x:Name="ProgressButton"
+                        Text=""
+                        Padding="10"
+                        FontSize="32"
+                        FontFamily="fa-regular"
+                        HeightRequest="160"
+                        WidthRequest="160"
+                        CornerRadius="80"
+                        HorizontalOptions="Center"
+                        Clicked="StartButton_OnClicked"
+                        BorderWidth="0"
+                        BackgroundColor="{StaticResource Primary}"/>
+            </Grid>
 
-    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Grid>
-            <GraphicsView x:Name="ProgressView"
-                          BackgroundColor="{StaticResource Primary}"
-                          HeightRequest="100"
-                          WidthRequest="100"/>
-            <Button x:Name="ProgressButton"
-                    Text=""
-                    FontSize="32"
-                    FontFamily="fa-regular"
-                    HeightRequest="160"
-                    WidthRequest="160"
-                    CornerRadius="80"
-                    HorizontalOptions="Center"
-                    Clicked="StartButton_OnClicked"
-                    BorderWidth="0"
-                    BackgroundColor="{StaticResource Primary}"/>
-        </Grid>
+            <Button 
+                x:Name="ResetButton"
+                Text="Reset"
+                HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="60"
+                Clicked="ResetButton_OnClicked"
+                TextColor="WhiteSmoke"/>
 
-        <Button 
-            x:Name="ResetButton"
-            Text="Reset"
-            HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="60"
-            Clicked="ResetButton_OnClicked"
-            TextColor="WhiteSmoke"/>
-    </VerticalStackLayout>
-
+            <Slider></Slider>
+        </VerticalStackLayout>
+    </Frame>
 </ContentPage>
