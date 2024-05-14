@@ -7,7 +7,7 @@
     Title="PomodoroTimer"
     BackgroundImageSource="background.jpg">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="OnSettingsClicked" Text="o">
+        <ToolbarItem Clicked="OnSettingsClicked" Text="⚙">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
                     <On Platform="Android,UWP" Value="bar.svg" />
@@ -17,9 +17,8 @@
     </ContentPage.ToolbarItems>
     <Frame
         BackgroundColor="#ECE4D6"
-        HeightRequest="500"
+        HeightRequest="400"
         WidthRequest="280"
-        Margin="0,-60,0,0"
         HasShadow="True"
         CornerRadius="20">
         <VerticalStackLayout  HeightRequest="400" WidthRequest="250" Padding="30" HorizontalOptions="Center" VerticalOptions="Center">
@@ -48,8 +47,6 @@
                 HorizontalOptions="End" VerticalOptions="EndAndExpand" Margin="60"
                 Clicked="ResetButton_OnClicked"
                 TextColor="WhiteSmoke"/>
-
-            <Slider></Slider>
         </VerticalStackLayout>
     </Frame>
 </ContentPage>

@@ -1,4 +1,6 @@
+using Microsoft.Maui.Controls;
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,7 +18,6 @@ namespace Pomodoro_Timer
         private bool _isBreakTime = false; // New flag to track if it's break time
         private TimeSpan _elapsedBeforePause = TimeSpan.Zero; // New field to store the elapsed time before pause
 
-
         public PomodoroTimer()
         {
             InitializeComponent();
@@ -25,13 +26,50 @@ namespace Pomodoro_Timer
             // Get the work and break durations from Preferences
             _duration = Preferences.Get("workDuration", 25) * 60; // Default to 25 minutes if not set
             _breakDuration = Preferences.Get("breakDuration", 5) * 60; // Default to 5 minutes if not set
+
+            MessagingCenter.Subscribe<Settings, string>(this, "BackgroundImageChanged", (sender, arg) => {
+                LoadImage(arg);
+            });
+
+            // Set the initial background image
+            var initialBackgroundImage = Preferences.Get("backgroundImage", "background.jpg");
+            LoadImage(initialBackgroundImage);
         }
-   
+
+        private async void LoadImage(string imagePath)
+        {
+            Console.WriteLine($"Received image path: {imagePath}"); // Log the received file path
+            try
+            {
+                if (File.Exists(imagePath))
+                {
+                    var result = await MediaPicker.PickPhotoAsync(new MediaPickerOptions
+                    {
+                        Title = "Please pick a photo"
+                    });
+
+                    if (result != null)
+                    {
+                        ImageSource imageSource = ImageSource.FromStream(() => result.OpenReadAsync().Result);
+                        this.BackgroundImageSource = imageSource;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"File does not exist: {imagePath}"); // Log a warning
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to load image: {ex.Message}"); // Log any errors
+            }
+        } 
+
         async void OnSettingsClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Settings());
         }
-        
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -121,6 +159,16 @@ namespace Pomodoro_Timer
             _progressArc.Progress = 100;
             ProgressView.Invalidate();
             ProgressButton.Text = "\u25B6";
+
+            // Reset the duration to the user's settings
+            _duration = Preferences.Get("workDuration", 25) * 60; // Default to 25 minutes if not set
+            _breakDuration = Preferences.Get("breakDuration", 5) * 60; // Default to 5 minutes if not set
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<Settings, string>(this, "BackgroundImageChanged");
         }
     }
 

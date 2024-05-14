@@ -1,15 +1,28 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Pomodoro_Timer.Settings">
-    <ContentPage.Content>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Pomodoro_Timer.Settings"
+    BackgroundImageSource="background.jpg"
+    >
+    
+    <Frame
+        BackgroundColor="#ECE4D6"
+        HeightRequest="300"
+        WidthRequest="300"
+        Margin="0,-60,0,0"
+        HasShadow="True"
+        CornerRadius="20">
         <StackLayout Padding="30">
-            <Label Text="Długość pracy (minuty)" />
+            <!--<Label Text="Długość pracy (minuty)" />-->
             <Slider x:Name="WorkDurationSlider" Minimum="1" Maximum="60" ValueChanged="OnWorkDurationSliderValueChanged" />
             <Label x:Name="WorkDurationLabel" />
-
-            <Label Text="Długość przerwy (minuty)" />
+            <Label></Label>
+            <!--<Label Text="Długość przerwy (minuty)" />-->
             <Slider x:Name="BreakDurationSlider" Minimum="1" Maximum="30" ValueChanged="OnBreakDurationSliderValueChanged" />
             <Label x:Name="BreakDurationLabel" />
+            <Label></Label>
+
+            <Button Text="Zmień tło" Clicked="OnChangeBackgroundButtonClicked" />
         </StackLayout>
-    </ContentPage.Content>
+    </Frame>
 </ContentPage>

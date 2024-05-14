@@ -2,36 +2,44 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Pomodoro_Timer.Views.NoteListPage"
-             Title="Notes">
+             Title="Notes"
+             BackgroundImageSource="background.jpg">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="OnItemAdded" Text="+">
+        <ToolbarItem Clicked="OnItemAdded" Text="➕">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android,UWP" Value="plus.png" />
+                    <On Platform="Android,UWP" Value="bar.svg" />
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-
-    <ListView 
-        x:Name="listView"
-        Margin="20"
-        ItemSelected="OnListItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout
-                        Margin="20,0,0,0"
-                        HorizontalOptions="FillAndExpand"
-                        Orientation="Horizontal">
-                        <Label HorizontalOptions="StartAndExpand" Text="{Binding Name}" />
-                        <Image
-                            HorizontalOptions="End"
-                            IsVisible="{Binding Done}"
-                            Source="check.png" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <Frame
+        BackgroundColor="#ECE4D6"
+        HeightRequest="500"
+        WidthRequest="300"
+        Margin="0,-60,0,0"
+        HasShadow="True"
+        CornerRadius="20">
+        <ListView 
+            x:Name="listView"
+            Margin="20"
+            ItemSelected="OnListItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout
+                            Margin="1,0,0,0"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal">
+                            <Label HorizontalOptions="StartAndExpand" Text="{Binding Name}" />
+                            <Label
+                                HorizontalOptions="End"
+                                IsVisible="{Binding Done}"
+                                Text="✔️" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Frame>
 </ContentPage>

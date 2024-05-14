@@ -5,20 +5,66 @@
              BackgroundImageSource="background.jpg">
     <Frame
         BackgroundColor="#ECE4D6"
-        Opacity="0.5"
         HeightRequest="500"
-        WidthRequest="280"
-        Margin="0,-60,0,0"
+        WidthRequest="320"
+
         HasShadow="True"
         CornerRadius="20">
-            <ScrollView>
+             <ScrollView>
                 <VerticalStackLayout Padding="20">
                     <Label Text="Technika Pomodoro"
                            FontSize="32"
                            FontAttributes="Bold"
                            HorizontalOptions="CenterAndExpand" />
-
+                     <Label></Label>
                     <Label Text="Technika Pomodoro to metoda zarządzania czasem, która została opracowana przez Francesco Cirillo na koniec lat 80. Technika ta polega na dzieleniu pracy na interwały, zazwyczaj 25 minut długości, oddzielone krótkimi przerwami. Te interwały są znane jako 'pomodoro', włoskie słowo na 'pomidor', od kształtu kuchennego timera, który Cirillo używał jako student."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+                    <Label></Label>
+                    <Label Text="Technika składa się z sześciu kroków:"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="1. Zdecyduj, jakie zadanie ma być wykonane."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="2. Ustaw czasomierz (zazwyczaj na 25 minut)."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="3. Pracuj nad zadaniem."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="4. Zakończ pracę, gdy zadzwoni zegar i umieść znacznik kontrolny na kartce."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="5. Jeśli masz mniej niż cztery znaczniki kontrolne, zrób krótką przerwę (3 – 5 minut), a następnie przejdź do kroku 2."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="6. Po czterech pomodoros, zrób dłuższą przerwę (15 – 30 minut), wyzeruj liczbę znaczników, a następnie przejdź do kroku 1."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+                    <Label></Label>
+                    <Label Text="Podstawowe zasady:"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="Fazy planowania, śledzenia, nagrywania, edycji i wizualizacji są podstawowymi filarami tej techniki. W fazie planowania zadania są ustalane priorytetowo i zapisywane na liście zadań na bieżący dzień. Stosowny wysiłek jest szacowany."
+                           FontSize="16"
+                           HorizontalOptions="StartAndExpand" />
+                    <Label></Label>
+                    <Label Text="Narzędzia:"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           HorizontalOptions="StartAndExpand" />
+
+                    <Label Text="Wynalazca techniki popiera stosowanie możliwie najprostszych narzędzi: ołówka i mechanicznego zegara kuchennego. Jego zdaniem, nakręcanie budzika kuchennego podkreśla determinację do rozpoczęcia zadania, tykanie uzewnętrznia chęć wykonania zadania, a dzwonienie obwieszcza przerwę."
                            FontSize="16"
                            HorizontalOptions="StartAndExpand" />
                 </VerticalStackLayout>

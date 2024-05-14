@@ -27,6 +27,11 @@
             Title=""
             ContentTemplate="{DataTemplate local:AboutIt}"
             Route="AboutIt"
-            Icon="note.svg"/>
+            Icon="question_solid.svg"/>
+        <ShellContent
+            Title=""
+            ContentTemplate="{DataTemplate local:Account}"
+            Route="Account"
+            Icon="user_regular.svg"/>
     </FlyoutItem>
 </Shell>

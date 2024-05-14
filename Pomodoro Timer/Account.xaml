@@ -1,0 +1,27 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomodoro_Timer.Account"
+             BackgroundImageSource="background.jpg">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Image Source="dotnet_bot.jpg" 
+                   WidthRequest="100" 
+                   HeightRequest="100" 
+                   HorizontalOptions="Center" />
+            <Label x:Name="UsernameLabel" 
+                   Text="Username" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" />
+            <Label></Label>
+            <Label Text="Statystyki:" 
+                   FontSize="20" 
+                   />
+            <Label x:Name="PomodoroSessionsLabel" 
+                   Text="{Binding PomodoroSessionsCount, StringFormat='Liczba sesji Pomodoro: {0}'}" 
+                   FontSize="16" />
+            <Label x:Name="NotesCountLabel" 
+                   Text="{Binding NotesCount, StringFormat='Liczba notatek: {0}'}" 
+                   FontSize="16" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
